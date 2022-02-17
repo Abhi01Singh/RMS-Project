@@ -1,7 +1,7 @@
 ﻿@model WebApplication1.Models.Registration
 
 @{
-    ViewBag.Title = "Login";
+    ViewBag.Title = "Log In";
 }
 
 <h2>Login</h2>
@@ -29,6 +29,14 @@
                     }
                 }
             </div>
+        </div>
+        <div>
+            @Html.ActionLink("Register", "Create")
+        </div>
+        <div>
+
+            @Html.ActionLink("LogIn with facebook", "Facebook", "Home")
+
         </div>
 
     }

@@ -6,6 +6,8 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
+using Facebook;
 using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
@@ -13,12 +15,12 @@ namespace WebApplication1.Controllers
     public class RAccountController : Controller
     {
         private RMSDBcontext db = new RMSDBcontext();
-
         // GET: RAccount
         public ActionResult Index()
         {
             return View(db.Registrations.ToList());
         }
+
 
         // GET: RAccount/Details/5
         public ActionResult Details(int? id)
@@ -150,6 +152,11 @@ namespace WebApplication1.Controllers
                 return RedirectToAction("Login");
             }
         }
+
+        //Facebook login
+    
+
+
 
         protected override void Dispose(bool disposing)
         {
