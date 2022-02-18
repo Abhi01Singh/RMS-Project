@@ -1,0 +1,14 @@
+﻿@model WebApplication1.Models.Registration
+
+@{
+    ViewBag.Title = "LoggedIn";
+}
+
+@if (Session["Email"] != null)
+{
+    <h4>Hello @Session["Fname"].ToString()</h4>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index", "RAccount")
+</div>

@@ -51,8 +51,6 @@ namespace WebApplication1.Controllers
             {
 
 
-
-
                 client_id = "2598434023633067",
 
                 client_secret = "cd880d7f7ba8739aec828c238784931c",
@@ -66,8 +64,8 @@ namespace WebApplication1.Controllers
 
 
             });
-
             return Redirect(loginUrl.AbsoluteUri);
+
 
         }
 
