@@ -152,6 +152,11 @@ namespace WebApplication1.Controllers
                 return RedirectToAction("Login");
             }
         }
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Login");
+        }
 
         //Facebook login
     

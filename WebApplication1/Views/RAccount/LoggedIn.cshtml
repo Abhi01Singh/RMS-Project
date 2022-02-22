@@ -6,4 +6,8 @@
 @if (Session["Email"] != null)
 {
     <h4>Hello @Session["Fname"].ToString()</h4>
-}
+    
+        @Html.ActionLink("Back to List", "Index")
+    
+    }
+<div>@Html.ActionLink("Logout", "Logout")</div>
