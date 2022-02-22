@@ -11,6 +11,11 @@ namespace WebApplication1.Controllers
     public class HomeController : Controller
     {
         // GET: Home
+       
+        public ActionResult HomePage()
+        {
+            return View();
+        }
         public ActionResult Index()
         {
             return View();
