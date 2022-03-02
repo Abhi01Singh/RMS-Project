@@ -145,6 +145,10 @@
     <Compile Include="Migrations\202202130727096_CreateRegistrationTable.designer.cs">
       <DependentUpon>202202130727096_CreateRegistrationTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202203020251335_NewDB.cs" />
+    <Compile Include="Migrations\202203020251335_NewDB.designer.cs">
+      <DependentUpon>202203020251335_NewDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Registration.cs" />
     <Compile Include="Models\RMSDBcontext.cs" />
@@ -178,6 +182,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202202130727096_CreateRegistrationTable.resx">
       <DependentUpon>202202130727096_CreateRegistrationTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203020251335_NewDB.resx">
+      <DependentUpon>202203020251335_NewDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

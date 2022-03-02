@@ -195,4 +195,5 @@ C:\IndPro\RMS\RMS-Project\WebApplication1\obj\Debug\RMS.csproj.CoreCompileInputs
 C:\IndPro\RMS\RMS-Project\WebApplication1\obj\Debug\RMS.csproj.CopyComplete
 C:\IndPro\RMS\RMS-Project\WebApplication1\obj\Debug\WebApplication1.dll
 C:\IndPro\RMS\RMS-Project\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\IndPro\RMS\RMS-Project\WebApplication1\obj\Debug\WebApplication1.Migrations.NewDB.resources
 C:\IndPro\RMS\RMS-Project\WebApplication1\obj\Debug\RMS.csproj.AssemblyReference.cache
