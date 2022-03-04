@@ -1,5 +1,6 @@
-﻿using Facebook;
-using System;
+﻿using System;
+using Facebook;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,16 +11,29 @@ namespace WebApplication1.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Home
-       
-        public ActionResult HomePage()
-        {
-            return View();
-        }
         public ActionResult Index()
         {
             return View();
         }
+
+        public ActionResult About()
+        {
+            ViewBag.Message = "Your application description page.";
+
+            return View();
+        }
+
+        public ActionResult Contact()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+        public ActionResult HomePage()
+        {
+            return View();
+        }
+      
         private Uri RediredtUri
 
         {
@@ -56,9 +70,9 @@ namespace WebApplication1.Controllers
             {
 
 
-                client_id = "2598434023633067",
+                client_id = "947711432780088",
 
-                client_secret = "cd880d7f7ba8739aec828c238784931c",
+                client_secret = "84eb99bcb39da64b0952788fe2df996b",
 
                 redirect_uri = RediredtUri.AbsoluteUri,
 
@@ -75,8 +89,6 @@ namespace WebApplication1.Controllers
         }
 
 
-
-
         public ActionResult FacebookCallback(string code)
 
         {
@@ -87,9 +99,9 @@ namespace WebApplication1.Controllers
 
             {
 
-                client_id = "2598434023633067",
+                client_id = "947711432780088",
 
-                client_secret = "cd880d7f7ba8739aec828c238784931c",
+                client_secret = "84eb99bcb39da64b0952788fe2df996b",
 
                 redirect_uri = RediredtUri.AbsoluteUri,
 
@@ -118,8 +130,8 @@ namespace WebApplication1.Controllers
 
             FormsAuthentication.SetAuthCookie(email, false);
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("About","Home");
 
         }
+     }
     }
-}

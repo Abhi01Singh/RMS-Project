@@ -13,10 +13,10 @@ namespace WebApplication1.Models
         public int Id { get; set; }
         [Required(ErrorMessage = "Field can't be empty")]
 
-        public string Fname { get; set; }
+        public string Firstname { get; set; }
 
         [Required(ErrorMessage = "Field can't be empty")]
-        public string Lname { get; set; }
+        public string Lastname { get; set; }
 
         [DataType(DataType.PhoneNumber)]
         [Display(Name = "Phone Number")]
@@ -24,7 +24,7 @@ namespace WebApplication1.Models
         [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$",
                    ErrorMessage = "Entered phone format is not valid.")]
         public string Phone { get; set; }
-        
+
         [Required(ErrorMessage = "Field can't be empty")]
         [DataType(DataType.EmailAddress, ErrorMessage = "E-mail is not valid")]
         public string Email { get; set; }
