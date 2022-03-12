@@ -24,11 +24,19 @@
                     <li>@Html.ActionLink("Register", "Create", "Account")</li>
                     <li>@Html.ActionLink("Facebook Login", "Facebook", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    
                 </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li> @Html.ActionLink("LogIn", "Login", "Account", new { area = "" }, new { @class = "navbar-brand", style = "color: Green" })</li>
-                        <li>@Html.ActionLink("Logout", "Logout","Account", new { area = "" }, new { @class = "navbar-brand", style = "color: Red" })</li>
-                    </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                    }
+
+                </ul>
             </div>
             </div>
         </div>

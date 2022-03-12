@@ -16,12 +16,14 @@ namespace WebApplication1.Controllers
         private RMSProjectDBContext db = new RMSProjectDBContext();
 
         // GET: Account
+        
         public ActionResult Index()
         {
             return View(db.Registrations.ToList());
         }
 
         // GET: Account/Details/5
+        
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -60,6 +62,7 @@ namespace WebApplication1.Controllers
         }
 
         // GET: Account/Edit/5
+        
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -91,6 +94,7 @@ namespace WebApplication1.Controllers
         }
 
         // GET: Account/Delete/5
+        
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -105,30 +109,30 @@ namespace WebApplication1.Controllers
             return View(registration);
         }
         //login
-        public ActionResult Login()
-        {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult Login(Registration log)
-        {
-            using (RMSProjectDBContext db = new RMSProjectDBContext())
-            {
-                var user = db.Registrations.Single(u => u.Email == log.Email && u.Password == log.Password);
-                if (user != null)
-                {
-                    Session["Email"] = user.Id.ToString();
-                    Session["Fname"] = user.Firstname.ToString();
-                    return RedirectToAction("LoggedIn");
-                }
-                else
-                {
-                    ModelState.AddModelError("", "Email or Password is incorrect");
-                }
-            }
-            return View();
+        
+         public ActionResult Login()
+         {
+             return View();
+         }
+         [HttpPost]
+         public ActionResult Login(Registration log)
+         {
+             using (RMSProjectDBContext db = new RMSProjectDBContext())
+             {
+                 var user = db.Registrations.Single(u => u.Email == log.Email && u.Password == log.Password);
+                 if (user != null)
+                 {
+                     Session["Email"] = user.Id.ToString();
+                     Session["Fname"] = user.Firstname.ToString();
+                     return RedirectToAction("LoggedIn");
+                 }
 
-        }
+                  ModelState.AddModelError("", "Email or Password is incorrect");
+                  return View();
+             }
+
+
+         }
         public ActionResult LoggedIn()
         {
             if (Session["Email"] != null)
