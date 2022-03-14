@@ -146,6 +146,9 @@ namespace WebApplication1.Controllers
         }
         public ActionResult Logout()
         {
+            Session.Abandon();
+            Session.Clear();
+            Session.RemoveAll();
             FormsAuthentication.SignOut();
             return RedirectToAction("Login");
         }

@@ -210,7 +210,6 @@ C:\IndPro\RMS\RMS-Project\WebApplication1\bin\Antlr3.Runtime.pdb
 C:\IndPro\RMS\RMS-Project\WebApplication1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\IndPro\RMS\RMS-Project\WebApplication1\bin\Org.Mentalis.Security.Cryptography.xml
 C:\IndPro\RMS\RMS-Project\WebApplication1\bin\Mono.Math.xml
-C:\IndPro\RMS\RMS-Project\WebApplication1\obj\Debug\WebApplication1.csproj.AssemblyReference.cache
 C:\IndPro\RMS\RMS-Project\WebApplication1\obj\Debug\WebApplication1.Migrations.RMSProject.resources
 C:\IndPro\RMS\RMS-Project\WebApplication1\obj\Debug\WebApplication1.csproj.GenerateResource.cache
 C:\IndPro\RMS\RMS-Project\WebApplication1\obj\Debug\WebApplication1.csproj.CoreCompileInputs.cache
@@ -221,3 +220,6 @@ C:\IndPro\RMS\RMS-Project\WebApplication1\bin\System.Net.Http.Formatting.dll
 C:\IndPro\RMS\RMS-Project\WebApplication1\bin\System.Web.Http.dll
 C:\IndPro\RMS\RMS-Project\WebApplication1\bin\System.Net.Http.Formatting.xml
 C:\IndPro\RMS\RMS-Project\WebApplication1\bin\System.Web.Http.xml
+C:\IndPro\RMS\RMS-Project\WebApplication1\bin\ImageResizer.dll
+C:\IndPro\RMS\RMS-Project\WebApplication1\bin\ImageResizer.xml
+C:\IndPro\RMS\RMS-Project\WebApplication1\obj\Debug\WebApplication1.csproj.AssemblyReference.cache
