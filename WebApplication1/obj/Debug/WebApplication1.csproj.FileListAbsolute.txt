@@ -222,4 +222,3 @@ C:\IndPro\RMS\RMS-Project\WebApplication1\bin\System.Net.Http.Formatting.xml
 C:\IndPro\RMS\RMS-Project\WebApplication1\bin\System.Web.Http.xml
 C:\IndPro\RMS\RMS-Project\WebApplication1\bin\ImageResizer.dll
 C:\IndPro\RMS\RMS-Project\WebApplication1\bin\ImageResizer.xml
-C:\IndPro\RMS\RMS-Project\WebApplication1\obj\Debug\WebApplication1.csproj.AssemblyReference.cache

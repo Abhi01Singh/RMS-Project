@@ -24,9 +24,11 @@ namespace WebApplication1.Models
         [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$",
                    ErrorMessage = "Entered phone format is not valid.")]
         public string Phone { get; set; }
-
+       
         [Required(ErrorMessage = "Field can't be empty")]
-        [DataType(DataType.EmailAddress, ErrorMessage = "E-mail is not valid")]
+        //[EmailAddress]
+        [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$",
+                   ErrorMessage = "Entered Email format is not valid.")]
         public string Email { get; set; }
 
         [Required]
