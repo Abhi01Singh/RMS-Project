@@ -41,19 +41,19 @@ namespace WebApplication1.Controllers
 
         // GET: Account/Create
         public ActionResult Create()
-         {
-             return View();
-         }
+        {
+            return View();
+        }
 
         // POST: Account/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-         [HttpPost]
-         [ValidateAntiForgeryToken]
-         public ActionResult Create([Bind(Include = "Id,Firstname,Lastname,Phone,Email,Password")] Registration registration)
-         {
-             if (ModelState.IsValid)
-             {
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "Id,Firstname,Lastname,Phone,Email,Password")] Registration registration)
+        {
+            if (ModelState.IsValid)
+            {
                 var isEmailAlreadyExists = db.Registrations.Any(x => x.Email == registration.Email);
                 var isPhoneAlreadyExists = db.Registrations.Any(x => x.Phone == registration.Phone);
                 if (isEmailAlreadyExists)
@@ -61,22 +61,21 @@ namespace WebApplication1.Controllers
                     ModelState.AddModelError("Email", "User with this email already exists");
                     return View(registration);
                 }
-                else if (isPhoneAlreadyExists)
+                if (isPhoneAlreadyExists)
                 {
                     ModelState.AddModelError("Phone Number", "User with this phone number already exists");
                     return View(registration);
                 }
                 db.Registrations.Add(registration);
-                 db.SaveChanges();
-                 return RedirectToAction("Index");
-             }
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
 
-             return View(registration);
-         }
-        
+            return View(registration);
+        }
 
         // GET: Account/Edit/5
-
+        
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -148,7 +147,7 @@ namespace WebApplication1.Controllers
                    // ModelState.AddModelError("", "Email or Password is incorrect");
                     return RedirectToAction(nameof(LoginError));
                 }
-                return View();
+                //return View();
             }
 
 
