@@ -13,5 +13,6 @@ namespace WebApplication1.Models
 
         }
         public DbSet<Registration> Registrations { get; set; }
+        /*public DbSet<RoleModel1> Roles { get; set; }*/
     }
 }

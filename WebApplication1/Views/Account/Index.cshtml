@@ -18,7 +18,8 @@
                 <li>@Html.ActionLink("Home", "Index", "Home")</li>
                 <li>@Html.ActionLink("Register", "Create", "Account")</li>
                 <li>@Html.ActionLink("Facebook Login", "Facebook", "Home")</li>
-                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                <li>@Html.ActionLink("View Roles", "Index", "Role")</li>
+                <li>@Html.ActionLink("Role Index", "Index", "UserRoleReg")</li>
                 <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
 
             </ul>
@@ -68,6 +69,7 @@
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
+                @*<asp:HyperLink runat="server" data-toggle="modal" data-target="#showmodal">Edit</asp:HyperLink>*@
                 @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
                 @Html.ActionLink("Details", "Details", new { id = item.Id }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.Id })
@@ -76,3 +78,10 @@
     }
 
 </table>
+@*<div id="showmodal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                @{ Html.RenderPartial("Edit1"); }
+            </div>
+        </div>
+    </div>*@

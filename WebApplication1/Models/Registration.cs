@@ -24,7 +24,7 @@ namespace WebApplication1.Models
         [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$",
                    ErrorMessage = "Entered phone format is not valid.")]
         public string Phone { get; set; }
-       
+
         [Required(ErrorMessage = "Field can't be empty")]
         //[EmailAddress]
         [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$",
@@ -37,5 +37,13 @@ namespace WebApplication1.Models
         ErrorMessage = "Your password must be 6 characters long and contain at least one symbol (!, @, #, etc).")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
+
+       /*[Compare("Password", ErrorMessage = "Confirm password doesn't match, Type again !")]
+        [DataType(DataType.Password)]
+        public string ConfirmPassword { get; set; }*/
+
+       // public string RoleName { get; set; }
+
+
     }
 }

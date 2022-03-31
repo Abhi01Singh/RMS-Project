@@ -33,7 +33,7 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
-      
+
         private Uri RediredtUri
 
         {
@@ -70,9 +70,9 @@ namespace WebApplication1.Controllers
             {
 
 
-                client_id = "947711432780088",
+                client_id = "645135643235147",
 
-                client_secret = "84eb99bcb39da64b0952788fe2df996b",
+                client_secret = "9a267511faf4fb2b1bc11afff3975ea8",
 
                 redirect_uri = RediredtUri.AbsoluteUri,
 
@@ -99,9 +99,9 @@ namespace WebApplication1.Controllers
 
             {
 
-                client_id = "947711432780088",
+                client_id = "645135643235147",
 
-                client_secret = "84eb99bcb39da64b0952788fe2df996b",
+                client_secret = "9a267511faf4fb2b1bc11afff3975ea8",
 
                 redirect_uri = RediredtUri.AbsoluteUri,
 
@@ -130,8 +130,8 @@ namespace WebApplication1.Controllers
 
             FormsAuthentication.SetAuthCookie(email, false);
 
-            return RedirectToAction("About","Home");
+            return RedirectToAction("About", "Home");
 
         }
-     }
     }
+}
