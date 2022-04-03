@@ -42,7 +42,14 @@ namespace WebApplication1.Controllers
         // GET: Account/Create
         public ActionResult Create()
         {
-            return View();
+            Registration obj = new Registration();
+            List<Models.Roles> role = new List<Models.Roles> {
+                    new Models.Roles { ID=1,RoleName="Administrator"},
+                    new Models.Roles { ID = 2, RoleName = "Recruiter"},
+                    new Models.Roles {ID= 3, RoleName = "Interviewer"}
+                };
+            obj.AvailableRoles = role;
+            return View(obj);
         }
 
         // POST: Account/Create
@@ -50,10 +57,12 @@ namespace WebApplication1.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Firstname,Lastname,Phone,Email,Password")] Registration registration)
+        public ActionResult Create([Bind(Include = "Id,Firstname,Lastname,Phone,Email,Password,AvailableRoles")] Registration registration)
         {
             if (ModelState.IsValid)
             {
+                //registration.RoleName = "Administrator";
+
                 var isEmailAlreadyExists = db.Registrations.Any(x => x.Email == registration.Email);
                 var isPhoneAlreadyExists = db.Registrations.Any(x => x.Phone == registration.Phone);
                 if (isEmailAlreadyExists)

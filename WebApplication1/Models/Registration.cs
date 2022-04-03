@@ -38,11 +38,26 @@ namespace WebApplication1.Models
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
-       /*[Compare("Password", ErrorMessage = "Confirm password doesn't match, Type again !")]
-        [DataType(DataType.Password)]
-        public string ConfirmPassword { get; set; }*/
+        /*[Compare("Password", ErrorMessage = "Confirm password doesn't match, Type again !")]
+         [DataType(DataType.Password)]
+         public string ConfirmPassword { get; set; }*/
 
-       // public string RoleName { get; set; }
+        public string RoleName { get; set; }
+        public List<Roles> AvailableRoles { get; set; }
+
+        //List<Roles> role = new List<Roles> {
+        //            new Roles { ID=1,RoleName="Administrator",Checked=false},
+        //            new Roles { ID = 2, RoleName = "Recruiter", Checked = false },
+        //            new Roles {ID= 3, RoleName = "Interviewer", Checked = false }
+        //        };
+        
+        
+    }
+    public class Roles
+    {
+        public int ID { get; set; }
+        public string RoleName { get; set; }
+        //public bool Checked { get; set; }
 
 
     }

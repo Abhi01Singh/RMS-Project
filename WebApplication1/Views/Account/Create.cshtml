@@ -49,6 +49,15 @@
             @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
         </div>
     </div>
+    @*<div class="form-group">
+         @Html.LabelFor(model => model.AvailableRoles, htmlAttributes: new { @class = "control-label col-md-2" })
+         <div class="col-md-10">
+             Admin
+             @Html.RadioButtonFor(model => model.AvailableRoles, "Admin")
+             Administartor
+             @Html.RadioButtonFor(model => model.AvailableRoles, "Administrator")
+         </div>
+        </div>*@
     @* <div class="form-group">
             @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -56,6 +65,29 @@
                 @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
             </div>
         </div>*@
+    <div class="form-group">
+        @Html.LabelFor(model => model.RoleName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @foreach (var item in Model.AvailableRoles)
+                    {
+                        <input id="chk@(item.ID)" type="checkbox" value="@item.ID" />@item.RoleName<br/>
+                    }
+            </div>
+        </div>
+   @*<div class="form-group">
+
+        @Html.LabelFor(model => model.RoleName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @foreach (var item in Model.AvailableRoles)
+            {
+                <input id="chk@(item.ID)" type="radio" value="@item.RoleName" />@item.RoleName<br />
+                @Html.RadioButtonFor(model => model.AvailableRoles, new { id = item.RoleName })
+                @Html.Label(item.RoleName)
+            }
+        </div>
+
+
+    </div>*@
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
@@ -63,8 +95,8 @@
         </div>
     </div>
 </div>
-}
+    }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>

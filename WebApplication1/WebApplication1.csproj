@@ -217,6 +217,18 @@
     <Compile Include="Migrations\202203291751304_UserRoleTable.designer.cs">
       <DependentUpon>202203291751304_UserRoleTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202203311557255_newReg.cs" />
+    <Compile Include="Migrations\202203311557255_newReg.designer.cs">
+      <DependentUpon>202203311557255_newReg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204011247359_newRegrole.cs" />
+    <Compile Include="Migrations\202204011247359_newRegrole.designer.cs">
+      <DependentUpon>202204011247359_newRegrole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204021102218_newRegR.cs" />
+    <Compile Include="Migrations\202204021102218_newRegR.designer.cs">
+      <DependentUpon>202204021102218_newRegR.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Registration.cs" />
     <Compile Include="Models\RMSDBcontext.cs" />
@@ -304,6 +316,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203291751304_UserRoleTable.resx">
       <DependentUpon>202203291751304_UserRoleTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203311557255_newReg.resx">
+      <DependentUpon>202203311557255_newReg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204011247359_newRegrole.resx">
+      <DependentUpon>202204011247359_newRegrole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204021102218_newRegR.resx">
+      <DependentUpon>202204021102218_newRegR.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
