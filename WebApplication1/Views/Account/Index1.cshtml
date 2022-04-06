@@ -1,0 +1,98 @@
+﻿@*@model IEnumerable<WebApplication1.ViewModels.RoleRegistrationViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("RMS", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("Register", "Create", "Account")</li>
+                <li>@Html.ActionLink("Facebook Login", "Facebook", "Home")</li>
+                <li>@Html.ActionLink("View Roles", "Index", "Role")</li>
+                <li>@Html.ActionLink("Role Index", "Index", "UserRoleReg")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+
+                <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Firstname
+        </th>
+        <th>
+            Lastname
+        </th>
+        <th>
+            Phone
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            RoleName
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        var RoleList = "";
+
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.registrationData.Firstname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.registrationData.Lastname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.registrationData.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.registrationData.Email)
+            </td>
+            @if (item.Roles.Count > 0)
+            {
+                RoleList = string.Join(" , ", item.Roles.Select(x => x.RoleName));
+            }
+            <td>
+                @RoleList
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.registrationData.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.registrationData.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.registrationData.Id })
+            </td>
+        </tr>
+    }
+
+</table>*@
+@*<div id="showmodal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                @{ Html.RenderPartial("Edit1"); }
+            </div>
+        </div>
+    </div>*@

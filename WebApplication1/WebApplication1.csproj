@@ -229,12 +229,17 @@
     <Compile Include="Migrations\202204021102218_newRegR.designer.cs">
       <DependentUpon>202204021102218_newRegR.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204031754033_newRegnew.cs" />
+    <Compile Include="Migrations\202204031754033_newRegnew.designer.cs">
+      <DependentUpon>202204031754033_newRegnew.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Registration.cs" />
     <Compile Include="Models\RMSDBcontext.cs" />
     <Compile Include="Models\RoleModel.cs" />
     <Compile Include="Models\UserRoleReg.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\RoleRegistrationViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -287,6 +292,7 @@
     <Content Include="Views\UserRoleReg\Details.cshtml" />
     <Content Include="Views\UserRoleReg\Edit.cshtml" />
     <Content Include="Views\UserRoleReg\Index.cshtml" />
+    <Content Include="Views\Account\Index1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -325,6 +331,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202204021102218_newRegR.resx">
       <DependentUpon>202204021102218_newRegR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204031754033_newRegnew.resx">
+      <DependentUpon>202204031754033_newRegnew.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

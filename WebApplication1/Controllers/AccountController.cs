@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using WebApplication1.Models;
+using WebApplication1.ViewModels;
 
 namespace WebApplication1.Controllers
 {
@@ -20,7 +21,11 @@ namespace WebApplication1.Controllers
 
         public ActionResult Index()
         {
+            // var Displaylist = RoleRegistrationViewModel.
+            //var RoleList = List < List < Roles >>;
             return View(db.Registrations.ToList());
+            
+            //return View(RoleRegistrationViewModel);
         }
 
         // GET: Account/Details/5
@@ -42,14 +47,14 @@ namespace WebApplication1.Controllers
         // GET: Account/Create
         public ActionResult Create()
         {
-            Registration obj = new Registration();
+            Registration registration = new Registration();
             List<Models.Roles> role = new List<Models.Roles> {
-                    new Models.Roles { ID=1,RoleName="Administrator"},
-                    new Models.Roles { ID = 2, RoleName = "Recruiter"},
-                    new Models.Roles {ID= 3, RoleName = "Interviewer"}
+                    new Models.Roles { ID=1,RoleName="Administrator",Checked=false},
+                    new Models.Roles { ID = 2, RoleName = "Recruiter",Checked=false},
+                    new Models.Roles {ID= 3, RoleName = "Interviewer",Checked=false}
                 };
-            obj.AvailableRoles = role;
-            return View(obj);
+            registration.AvailableRoles = role;
+            return View(registration);
         }
 
         // POST: Account/Create
@@ -57,7 +62,7 @@ namespace WebApplication1.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Firstname,Lastname,Phone,Email,Password,AvailableRoles")] Registration registration)
+        public ActionResult Create( Registration registration)
         {
             if (ModelState.IsValid)
             {
