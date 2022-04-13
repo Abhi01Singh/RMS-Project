@@ -14,11 +14,9 @@ namespace WebApplication1.Models
 
         public int RoleModelId { get; set; }
 
-        public int UserId { get; set; }
-
-        public string UserName { get; set; }
-       
         public string RoleName { get; set; }
+
+        public int UserId { get; set; }
 
         [ForeignKey("RoleModelId")]
         public virtual RoleModel RoleModel { get; set; }

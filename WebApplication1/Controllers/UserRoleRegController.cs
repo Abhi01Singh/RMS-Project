@@ -4,24 +4,39 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System.Web;
 using System.Web.Mvc;
 using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
+    
     public class UserRoleRegController : Controller
     {
         private RMSDBcontext db = new RMSDBcontext();
 
         // GET: UserRoleReg
+
+        [Authorize(Roles = "Administrator")]
+        
         public ActionResult Index()
         {
-            var userRole = db.UserRole.Include(u => u.Registration).Include(u => u.RoleModel);
-            return View(userRole.ToList());
+            if (Session["Email"] != null)
+            {
+                var userRole = db.UserRole.Include(u => u.Registration).Include(u => u.RoleModel);
+
+                return View(userRole.ToList());
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
+           
         }
 
         // GET: UserRoleReg/Details/5
+        //[Authorize(Roles = "Administrator")]
         public ActionResult Details(int? id)
         {
             if (id == null)

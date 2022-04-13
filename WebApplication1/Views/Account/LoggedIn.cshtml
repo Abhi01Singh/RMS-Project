@@ -32,4 +32,4 @@
 @if (Session["Email"] != null)
 {
 <h4>Hello @Session["Fname"].ToString()</h4>}
-<div>@Html.ActionLink("Back to List", "Index", new { area = "" }, new { @class = "navbar-brand", style = "color: Red" })</div>
+<div>@Html.ActionLink("Back to List", "Index","UserRoleReg", new { area = "" }, new { @class = "navbar-brand", style = "color: Red" })</div>

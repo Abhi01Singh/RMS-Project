@@ -196,6 +196,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RecruitersController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\UserRoleRegController.cs" />
     <Compile Include="Global.asax.cs">
@@ -233,7 +234,32 @@
     <Compile Include="Migrations\202204031754033_newRegnew.designer.cs">
       <DependentUpon>202204031754033_newRegnew.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204061515579_Removed fileds.cs" />
+    <Compile Include="Migrations\202204061515579_Removed fileds.designer.cs">
+      <DependentUpon>202204061515579_Removed fileds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204061519156_Removed fileds 2.cs" />
+    <Compile Include="Migrations\202204061519156_Removed fileds 2.designer.cs">
+      <DependentUpon>202204061519156_Removed fileds 2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204071418550_Removed roles.cs" />
+    <Compile Include="Migrations\202204071418550_Removed roles.designer.cs">
+      <DependentUpon>202204071418550_Removed roles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204091352314_newRole.cs" />
+    <Compile Include="Migrations\202204091352314_newRole.designer.cs">
+      <DependentUpon>202204091352314_newRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204120838554_Recruiter.cs" />
+    <Compile Include="Migrations\202204120838554_Recruiter.designer.cs">
+      <DependentUpon>202204120838554_Recruiter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204120903302_newRecruiter.cs" />
+    <Compile Include="Migrations\202204120903302_newRecruiter.designer.cs">
+      <DependentUpon>202204120903302_newRecruiter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Recruiter.cs" />
     <Compile Include="Models\Registration.cs" />
     <Compile Include="Models\RMSDBcontext.cs" />
     <Compile Include="Models\RoleModel.cs" />
@@ -292,7 +318,12 @@
     <Content Include="Views\UserRoleReg\Details.cshtml" />
     <Content Include="Views\UserRoleReg\Edit.cshtml" />
     <Content Include="Views\UserRoleReg\Index.cshtml" />
-    <Content Include="Views\Account\Index1.cshtml" />
+    <Content Include="Views\UserRoleReg\Edit1.cshtml" />
+    <Content Include="Views\Recruiters\Create.cshtml" />
+    <Content Include="Views\Recruiters\Delete.cshtml" />
+    <Content Include="Views\Recruiters\Details.cshtml" />
+    <Content Include="Views\Recruiters\Edit.cshtml" />
+    <Content Include="Views\Recruiters\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -334,6 +365,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202204031754033_newRegnew.resx">
       <DependentUpon>202204031754033_newRegnew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204061515579_Removed fileds.resx">
+      <DependentUpon>202204061515579_Removed fileds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204061519156_Removed fileds 2.resx">
+      <DependentUpon>202204061519156_Removed fileds 2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204071418550_Removed roles.resx">
+      <DependentUpon>202204071418550_Removed roles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204091352314_newRole.resx">
+      <DependentUpon>202204091352314_newRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204120838554_Recruiter.resx">
+      <DependentUpon>202204120838554_Recruiter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204120903302_newRecruiter.resx">
+      <DependentUpon>202204120903302_newRecruiter.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

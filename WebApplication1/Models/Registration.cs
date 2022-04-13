@@ -43,7 +43,9 @@ namespace WebApplication1.Models
          public string ConfirmPassword { get; set; }*/
 
         public string RoleName { get; set; }
-        public List<Roles> AvailableRoles { get; set; }
+        //public List<Roles> AvailableRoles { get; set; }
+
+        public List<UserRoleReg> UserRoles { get; set; }
 
     }
     public class Roles

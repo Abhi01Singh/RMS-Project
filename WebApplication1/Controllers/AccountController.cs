@@ -12,13 +12,13 @@ using WebApplication1.ViewModels;
 
 namespace WebApplication1.Controllers
 {
-
+ 
     public class AccountController : Controller
     {
         private RMSDBcontext db = new RMSDBcontext();
 
         // GET: Account
-
+        
         public ActionResult Index()
         {
             // var Displaylist = RoleRegistrationViewModel.
@@ -47,14 +47,30 @@ namespace WebApplication1.Controllers
         // GET: Account/Create
         public ActionResult Create()
         {
-            Registration registration = new Registration();
-            List<Models.Roles> role = new List<Models.Roles> {
-                    new Models.Roles { ID=1,RoleName="Administrator",Checked=false},
-                    new Models.Roles { ID = 2, RoleName = "Recruiter",Checked=false},
-                    new Models.Roles {ID= 3, RoleName = "Interviewer",Checked=false}
-                };
-            registration.AvailableRoles = role;
-            return View(registration);
+            RoleRegistrationViewModel rvm = new RoleRegistrationViewModel();
+            rvm.registrationData = new Registration();
+            List<RoleModel> roles = db.Role.ToList();
+            if(roles!=null && roles.Any())
+            {
+                rvm.ChkRoles = new List<ChkRoleModel>();
+                foreach(RoleModel roleModel in roles)
+                {
+                    rvm.ChkRoles.Add(new ChkRoleModel()
+                    {
+                        Value = roleModel.Id,
+                        Text = roleModel.RoleName,
+                        Selected = false
+                    });
+                }
+            }
+            //Registration registration = new Registration();
+            //List<Models.Roles> role = new List<Models.Roles> {
+            //        new Models.Roles { ID=1,RoleName="Administrator",Checked=false},
+            //        new Models.Roles { ID = 2, RoleName = "Recruiter",Checked=false},
+            //        new Models.Roles {ID= 3, RoleName = "Interviewer",Checked=false}
+            //    };
+            //registration.AvailableRoles = role;
+            return View(rvm);
         }
 
         // POST: Account/Create
@@ -62,14 +78,14 @@ namespace WebApplication1.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create( Registration registration)
+        public ActionResult Create(RoleRegistrationViewModel registration)
         {
             if (ModelState.IsValid)
             {
                 //registration.RoleName = "Administrator";
 
-                var isEmailAlreadyExists = db.Registrations.Any(x => x.Email == registration.Email);
-                var isPhoneAlreadyExists = db.Registrations.Any(x => x.Phone == registration.Phone);
+                var isEmailAlreadyExists = db.Registrations.Any(x => x.Email == registration.registrationData.Email);
+                var isPhoneAlreadyExists = db.Registrations.Any(x => x.Phone == registration.registrationData.Phone);
                 if (isEmailAlreadyExists)
                 {
                     ModelState.AddModelError("Email", "User with this email already exists");
@@ -80,7 +96,25 @@ namespace WebApplication1.Controllers
                     ModelState.AddModelError("Phone Number", "User with this phone number already exists");
                     return View(registration);
                 }
-                db.Registrations.Add(registration);
+                
+                if(registration.ChkRoles!=null && registration.ChkRoles.Any())
+                {
+                    registration.registrationData.UserRoles = new List<UserRoleReg>();
+                    foreach (ChkRoleModel chkRoleModel in registration.ChkRoles)
+                    {
+                        if(chkRoleModel.Selected)
+                        {
+                            registration.registrationData.UserRoles.Add(new UserRoleReg()
+                            {
+                                UserId= registration.registrationData.Id,
+                                RoleModelId= chkRoleModel.Value,
+                                RoleName=chkRoleModel.Text
+                            });
+                        }
+                    }
+                }
+
+                db.Registrations.Add(registration.registrationData);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -137,7 +171,7 @@ namespace WebApplication1.Controllers
             return View(registration);
         }
         //login
-        [AllowAnonymous]
+      
         public ActionResult Login()
         {
             return View();
@@ -187,6 +221,7 @@ namespace WebApplication1.Controllers
             Session.Abandon();
             Session.Clear();
             Session.RemoveAll();
+            Response.Cookies.Clear();
             FormsAuthentication.SignOut();
             return RedirectToAction("Login");
         }

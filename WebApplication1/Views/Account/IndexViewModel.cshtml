@@ -1,0 +1,57 @@
+﻿@using WebApplication1;
+@model IEnumerable<WebApplication1.ViewModels.RoleRegistrationViewModel>
+
+<h2>Index</h2>
+
+<table>
+        @Html.ActionLink("Create New", "Create")
+    
+        <tr>
+            <th>
+                Firstname
+            </th>
+            <th>
+                Lastname
+            </th>
+            <th>
+                Phone
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                RoleName
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            var RoleList = "";
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.registrationData.Firstname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.registrationData.Lastname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.registrationData.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.registrationData.Email)
+                </td>
+                @if (item.Roles.Count > 0)
+                {
+                    RoleList = string.Join(" , ", item.Roles.Select(x => x.RoleName));
+                }
+                <td>
+                    @RoleList
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.registrationData.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.registrationData.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.registrationData.Id })
+                </td>
+            </tr>
+        }
+    </table>
